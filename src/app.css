@@ -11,3 +11,9 @@ body {
 form {
 	@apply flex flex-col pt-8 max-w-lg w-full;
 }
+
+a.active {
+	color: #fffb00;
+	text-decoration: overline;
+	text-decoration-color: #328eef;
+}
