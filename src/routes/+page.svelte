@@ -7,6 +7,12 @@
 	let error = false
 	let answer = ''
 
+	function resetInput() {
+		document.querySelector('input').value = ''
+		document.activeElement.blur()
+		// document.querySelector('input').focus(); //breaks on mobile
+	}
+
 	const handleSubmit = async () => {
 		loading = true
 		error = false
@@ -49,6 +55,7 @@
 		})
 
 		eventSource.stream()
+		resetInput()
 	}
 </script>
 
