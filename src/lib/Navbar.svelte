@@ -22,28 +22,40 @@
 			</li>
 			<div class="w-full justify-around max-w-md mx-auto text-xl hidden md:flex">
 				<li class="hover:text-[#fffb00]">
-					<a class:active={$page.url.pathname == '/about'} href="https://madr.io/about/">About</a>
-				</li>
-				<li class="hover:text-[#fffb00]">
-					<a class:active={$page.url.pathname == '/tech'} href="https://madr.io/tech/">Tech</a>
-				</li>
-				<li class="hover:text-[#fffb00]">
-					<a class:active={$page.url.pathname == 'https://madr.io/projects/'} href="/projects"
-						>Projects</a
+					<a
+						class:active={$page.url.pathname == 'https://madr.io/about/'}
+						href="https://madr.io/about/">About</a
 					>
 				</li>
 				<li class="hover:text-[#fffb00]">
-					<a class:active={$page.url.pathname == 'https://madr.io/contact/'} href="/contact"
-						>Contact</a
+					<a
+						class:active={$page.url.pathname == 'https://madr.io/tech/'}
+						href="https://madr.io/tech/">Tech</a
 					>
 				</li>
 				<li class="hover:text-[#fffb00]">
-					<a class:active={$page.url.pathname == 'https://madr.io/weather/'} href="/weather"
-						>Weather?</a
+					<a
+						class:active={$page.url.pathname == 'https://madr.io/projects/'}
+						href="https://madr.io/projects/">Projects</a
 					>
 				</li>
 				<li class="hover:text-[#fffb00]">
-					<a class:active={$page.url.pathname == 'https://madr.io/login/'} href="/login">Login</a>
+					<a
+						class:active={$page.url.pathname == 'https://madr.io/contact/'}
+						href="https://madr.io/contact/">Contact</a
+					>
+				</li>
+				<li class="hover:text-[#fffb00]">
+					<a
+						class:active={$page.url.pathname == 'https://madr.io/weather/'}
+						href="https://madr.io/weather/">Weather?</a
+					>
+				</li>
+				<li class="hover:text-[#fffb00]">
+					<a
+						class:active={$page.url.pathname == 'https://madr.io/login/'}
+						href="https://madr.io/login/">Login</a
+					>
 				</li>
 			</div>
 			<li>
