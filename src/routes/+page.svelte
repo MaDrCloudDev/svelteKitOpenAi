@@ -53,8 +53,16 @@
 	}
 </script>
 
-<h1 class="text-4xl font-bold text-[#328eef]">flirtatiousBot</h1>
-<form on:submit|preventDefault={() => handleSubmit()}>
+<svelte:head>
+	<title>flirtatiousBot | MaDr</title>
+	<meta name="description" content="A bot that flirts with you by MaDrCloudDev." />
+</svelte:head>
+
+<h1 class="text-4xl font-bold text-[#328eef] text-center">flirtatiousBot</h1>
+<form
+	class="flex flex-col pt-8 max-w-lg w-full mx-auto"
+	on:submit|preventDefault={() => handleSubmit()}
+>
 	<label class="text-[#fffb00] text-xl mb-1" for="context">Introduce yourself to the bot:</label>
 	<textarea class="bg-black border text-[#328eef]" name="context" rows="5" bind:value={context} />
 	<button
