@@ -16,7 +16,7 @@
 	<div class="pt-2 pb-2 flex-grow max-w-2xl mx-auto">
 		<ul class="flex items-center justify-between">
 			<li class="ml-2">
-				<a on:click={toggle} href="/" aria-label="MaDr Logo">
+				<a on:click={toggle} href="https://madr.io/" aria-label="MaDr Logo">
 					<LogoNav />
 				</a>
 			</li>
