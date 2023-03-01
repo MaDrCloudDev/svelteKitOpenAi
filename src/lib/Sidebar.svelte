@@ -10,7 +10,7 @@
 	console.log($page.url.pathname)
 </script>
 
-<aside class="fixed w-full h-full bg-black shadow-lg text-4xl text-center z-50" class:open>
+<aside class="fixed w-full h-full bg-black shadow-lg text-3xl text-center z-50" class:open>
 	<ul class="flex flex-col gap-6 content">
 		<li class="hover:text-[#fffb00] mb-3">
 			<a
@@ -46,6 +46,9 @@
 				class:active={$page.url.pathname == 'https://madr.io/weather/'}
 				href="https://madr.io/weather/">Weather?</a
 			>
+		</li>
+		<li class="hover:text-[#fffb00]">
+			<a class:active={$page.url.pathname == '/'} href="https://flirtatiousbot.madr.io/">Robot</a>
 		</li>
 		<li class="hover:text-[#fffb00] mb-3">
 			<a
