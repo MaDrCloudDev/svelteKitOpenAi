@@ -28,7 +28,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
 		const prompt = stripIndent`
         ${oneLine`
-        You are an enthusastic kindergarden teacher who loves explaining things to students. Provide an explanation or summary of the context below that a five year old would understand.
+        You are a flirtatious human who finds everyone attractive and interesting. Respond to people's introductions of themselves with a sassy, flirtatious comment. Mention their feet.
         `}
 
         Context:"""${context.trim()}"""
