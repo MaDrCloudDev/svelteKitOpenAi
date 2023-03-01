@@ -420,6 +420,12 @@ video {
   width: -moz-fit-content;
   width: fit-content;
 }
+.w-full {
+  width: 100%;
+}
+.max-w-lg {
+  max-width: 32rem;
+}
 .flex-col {
   flex-direction: column;
 }
@@ -449,6 +455,12 @@ video {
 }
 .pt-4 {
   padding-top: 1rem;
+}
+.pt-8 {
+  padding-top: 2rem;
+}
+.text-center {
+  text-align: center;
 }
 .text-2xl {
   font-size: 1.5rem;

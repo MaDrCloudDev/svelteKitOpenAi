@@ -575,9 +575,9 @@ var init__ = __esm({
   ".svelte-kit/output/server/nodes/0.js"() {
     index = 0;
     component = async () => (await Promise.resolve().then(() => (init_layout_svelte(), layout_svelte_exports))).default;
-    file = "_app/immutable/entry/_layout.svelte.6e531ef8.js";
-    imports = ["_app/immutable/entry/_layout.svelte.6e531ef8.js", "_app/immutable/chunks/index.fe9ef46a.js"];
-    stylesheets = ["_app/immutable/assets/_layout.6b53f6cc.css"];
+    file = "_app/immutable/entry/_layout.svelte.4533a2e4.js";
+    imports = ["_app/immutable/entry/_layout.svelte.4533a2e4.js", "_app/immutable/chunks/index.e839a3cc.js"];
+    stylesheets = ["_app/immutable/assets/_layout.0707d96f.css"];
     fonts = [];
   }
 });
@@ -635,8 +635,8 @@ var init__2 = __esm({
   ".svelte-kit/output/server/nodes/1.js"() {
     index2 = 1;
     component2 = async () => (await Promise.resolve().then(() => (init_error_svelte(), error_svelte_exports))).default;
-    file2 = "_app/immutable/entry/error.svelte.ace12d5e.js";
-    imports2 = ["_app/immutable/entry/error.svelte.ace12d5e.js", "_app/immutable/chunks/index.fe9ef46a.js", "_app/immutable/chunks/singletons.4f37e813.js"];
+    file2 = "_app/immutable/entry/error.svelte.97ce8ff5.js";
+    imports2 = ["_app/immutable/entry/error.svelte.97ce8ff5.js", "_app/immutable/chunks/index.e839a3cc.js", "_app/immutable/chunks/singletons.0bfb2d1e.js"];
     stylesheets2 = [];
     fonts2 = [];
   }
@@ -1382,7 +1382,7 @@ var init_server_ts = __esm({
         }
         const prompt = stripIndent_default`
         ${oneLine_default`
-        You are a flirtatious human attracted and interested in everyone. When a person writes a short bio about themselves, respond by flirting with in a sassy manner. Talk about their feet.
+        You are an enthusastic kindergarden teacher who loves explaining things to students. Provide an explanation or summary of the context below that a five year old would understand.
         `}
 
         Context:"""${context.trim()}"""
@@ -1525,7 +1525,7 @@ var options = {
   root: Root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<meta name="viewport" content="width=device-width" />\n		' + head + '\n	</head>\n	<body data-sveltekit-preload-data="hover">\n		<div style="display: contents">' + body + "</div>\n	</body>\n</html>\n",
+    app: ({ head, body, assets: assets2, nonce, env }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link\n			rel="icon"\n			type="image/svg"\n			sizes="any"\n			href="https://raw.githubusercontent.com/MaDrCloudDev/projectsImages/master/MaDrLogo.svg"\n		/>\n		<!-- <link rel="icon" href="' + assets2 + '/favicon.png" /> -->\n		<meta name="viewport" content="width=device-width" />\n		' + head + '\n	</head>\n	<body data-sveltekit-preload-data="hover">\n		<div style="display: contents">' + body + "</div>\n	</body>\n</html>\n",
     error: ({ status, message }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -1573,7 +1573,7 @@ var options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "dl4cig"
+  version_hash: "18x7wrb"
 };
 function get_hooks() {
   return {};
@@ -4731,10 +4731,10 @@ _manifest = new WeakMap();
 var manifest = {
   appDir: "_app",
   appPath: "_app",
-  assets: /* @__PURE__ */ new Set(["favicon.png"]),
-  mimeTypes: { ".png": "image/png" },
+  assets: /* @__PURE__ */ new Set([]),
+  mimeTypes: {},
   _: {
-    client: { "start": { "file": "_app/immutable/entry/start.2e034734.js", "imports": ["_app/immutable/entry/start.2e034734.js", "_app/immutable/chunks/index.fe9ef46a.js", "_app/immutable/chunks/singletons.4f37e813.js"], "stylesheets": [], "fonts": [] }, "app": { "file": "_app/immutable/entry/app.57e4a81d.js", "imports": ["_app/immutable/entry/app.57e4a81d.js", "_app/immutable/chunks/index.fe9ef46a.js"], "stylesheets": [], "fonts": [] } },
+    client: { "start": { "file": "_app/immutable/entry/start.f3e19d4f.js", "imports": ["_app/immutable/entry/start.f3e19d4f.js", "_app/immutable/chunks/index.e839a3cc.js", "_app/immutable/chunks/singletons.0bfb2d1e.js"], "stylesheets": [], "fonts": [] }, "app": { "file": "_app/immutable/entry/app.e0979740.js", "imports": ["_app/immutable/entry/app.e0979740.js", "_app/immutable/chunks/index.e839a3cc.js"], "stylesheets": [], "fonts": [] } },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2))
