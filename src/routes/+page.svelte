@@ -85,3 +85,11 @@
 		{/if}
 	</div>
 </form>
+
+<div class="flex justify-center mt-2">
+	<a
+		href="https://madr.io/flirtatiousbot"
+		class="justify-center text-lg sm:text-xl hover:text-[#fffb00] text-[#328eef] cursor-pointer"
+		>Read about this project!</a
+	>
+</div>
