@@ -5,6 +5,7 @@
 	import Navbar from '$lib/Navbar.svelte'
 	export let open = false
 	import Sidebar from '$lib/Sidebar.svelte'
+	import Footer from '$lib/Footer.svelte'
 </script>
 
 <Navbar data bind:sidebar={open} />
@@ -12,3 +13,4 @@
 <div class="flex flex-col items-center px-8">
 	<slot />
 </div>
+<Footer />

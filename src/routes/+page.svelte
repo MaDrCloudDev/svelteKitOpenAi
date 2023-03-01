@@ -61,8 +61,8 @@
 <form class="flex flex-col max-w-lg w-full mx-auto" on:submit|preventDefault={handleSubmit}>
 	<label class="text-[#fffb00] text-xl mb-1" for="context">Introduce yourself to the bot:</label>
 	<input
-		placeholder="name/age/location/etc..."
-		class="bg-black border text-[#328eef] p-4"
+		placeholder="first-name/age/state/etc..."
+		class="bg-black rounded-md border text-[#328eef] p-4"
 		name="context"
 		bind:value={context}
 	/>
