@@ -69,7 +69,7 @@
 	<label class="text-[#fffb00] text-xl mb-1" for="context">Introduce yourself to the bot:</label>
 	<input
 		placeholder="first-name/age/state/etc..."
-		class="bg-black rounded-md border text-[#328eef] p-4"
+		class="bg-black rounded-md border-[#7f7d76] border text-[#328eef] p-4"
 		name="context"
 		bind:value={context}
 	/>
@@ -79,9 +79,9 @@
 		>Introduce Yourself</button
 	>
 	<div class="pt-4">
-		<h2 class="text-2xl font-bold text-right">flirtatiousBot:</h2>
+		<h2 class="text-2xl font-bold text-right text-green-500 mb-1">flirtatiousBot:</h2>
 		{#if answer}
-			<p>{answer}</p>
+			<p class="text-2xl border rounded-2xl p-4">{answer}</p>
 		{/if}
 	</div>
 </form>
