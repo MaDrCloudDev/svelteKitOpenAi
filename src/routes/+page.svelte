@@ -69,7 +69,10 @@
 </svelte:head>
 
 <h1 class="text-4xl font-bold text-[#328eef] text-center">flirtatiousBot</h1>
-<form class="flex flex-col max-w-lg w-full mx-auto" on:submit|preventDefault={handleSubmit}>
+<form
+	class="flex flex-col max-w-lg w-full mx-auto overflow-hidden"
+	on:submit|preventDefault={handleSubmit}
+>
 	<label class="text-[#fffb00] text-xl mb-1" for="context">Introduce yourself to the bot:</label>
 	<input
 		placeholder="first-name/age/state/etc..."
