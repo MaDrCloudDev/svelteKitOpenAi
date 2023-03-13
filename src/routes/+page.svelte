@@ -64,18 +64,18 @@
 </script>
 
 <svelte:head>
-	<title>flirtatiousBot | MaDr</title>
+	<title>flirtatiousAI | MaDr</title>
 	<meta name="description" content="A bot that flirts with you by MaDrCloudDev." />
 </svelte:head>
 
-<h1 class="text-4xl font-bold text-[#328eef] text-center">flirtatiousBot</h1>
+<h1 class="text-4xl font-bold text-[#328eef] text-center">flirtatiousAI</h1>
 <form
 	class="flex flex-col max-w-lg w-full mx-auto overflow-hidden"
 	on:submit|preventDefault={handleSubmit}
 >
 	<label class="text-[#fffb00] text-xl mb-1" for="context">Introduce yourself to the bot:</label>
 	<input
-		placeholder="first-name/age/state/etc..."
+		placeholder="e.g. Hi, I'm MaDr, I'm a developer from Arizona..."
 		class="bg-black rounded-md border-[#7f7d76] border text-[#328eef] p-4"
 		name="context"
 		bind:value={context}
@@ -95,7 +95,7 @@
 				on:introend={() => (status = 'intro ended')}
 				on:outroend={() => (status = 'outro ended')}
 			>
-				<h2 class="text-2xl font-bold text-right text-green-500 mb-1">flirtatiousBot:</h2>
+				<h2 class="text-2xl font-bold text-right text-green-500 mb-1">flirtatiousAI:</h2>
 
 				<p class="text-2xl border rounded-2xl p-4">{answer}</p>
 			</div>
@@ -105,7 +105,7 @@
 
 <div class="flex justify-center mt-2">
 	<a
-		href="https://madr.io/flirtatiousbot"
+		href="https://madr.io/flirtatiousai"
 		class="justify-center text-lg sm:text-xl hover:text-[#fffb00] text-[#328eef] cursor-pointer"
 		>Read about this project!</a
 	>
