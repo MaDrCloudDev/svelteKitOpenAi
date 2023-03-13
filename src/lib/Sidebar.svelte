@@ -48,7 +48,7 @@
 			>
 		</li>
 		<li class="hover:text-[#fffb00]">
-			<a class:active={$page.url.pathname == '/'} href="https://flirtatiousai.madr.io/">Robot</a>
+			<a class:active={$page.url.pathname == '/'} href="https://flirtatiousai.madr.io/">Robot?</a>
 		</li>
 		<li class="hover:text-[#fffb00] mb-3">
 			<a
