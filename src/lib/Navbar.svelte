@@ -13,7 +13,7 @@
 </script>
 
 <header class="sticky top-0 z-50 bg-black text-[#7f7d76]">
-	<div class="pt-2 pb-2 flex-grow max-w-2xl mx-auto">
+	<div class="pb-2 flex-grow max-w-2xl mx-auto">
 		<ul class="flex items-center justify-between">
 			<li class="ml-2">
 				<a on:click={toggle} href="https://madr.io/" aria-label="MaDr Logo">
