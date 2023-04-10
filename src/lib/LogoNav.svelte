@@ -1,4 +1,11 @@
-<svg width="25" height="50" viewBox="0 0 25 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg
+	class="mt-2"
+	width="25"
+	height="50"
+	viewBox="0 0 25 50"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+>
 	<g clip-path="url(#clip0_801_66)">
 		<rect x="9.01862" y="32.0518" width="6.52408" height="9.78613" fill="#BF0A30" />
 		<path

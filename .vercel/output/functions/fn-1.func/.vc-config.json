@@ -1,0 +1,5 @@
+{
+	"runtime": "edge",
+	"envVarsInUse": [],
+	"entrypoint": "index.js"
+}
