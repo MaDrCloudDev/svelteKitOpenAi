@@ -36,13 +36,6 @@
 		<li class="hover:text-[#fffb00] mb-3">
 			<a
 				on:click={toggle}
-				class:active={$page.url.pathname == 'https://madr.io/contact/'}
-				href="https://madr.io/contact/">Contact</a
-			>
-		</li>
-		<li class="hover:text-[#fffb00] mb-3">
-			<a
-				on:click={toggle}
 				class:active={$page.url.pathname == 'https://madr.io/weather/'}
 				href="https://madr.io/weather/">Weather?</a
 			>
@@ -50,11 +43,18 @@
 		<li class="hover:text-[#fffb00]">
 			<a class:active={$page.url.pathname == '/'} href="https://flirtatiousai.madr.io/">Robot?</a>
 		</li>
-		<li class="hover:text-[#fffb00] mb-3">
+		<!-- <li class="hover:text-[#fffb00] mb-3">
 			<a
 				on:click={toggle}
 				class:active={$page.url.pathname == 'https://madr.io/login/'}
 				href="https://madr.io/login/">Login</a
+			>
+		</li> -->
+		<li class="hover:text-[#fffb00] mb-3">
+			<a
+				on:click={toggle}
+				class:active={$page.url.pathname == 'https://madr.io/contact/'}
+				href="https://madr.io/contact/">Contact</a
 			>
 		</li>
 		<li class="mx-auto">

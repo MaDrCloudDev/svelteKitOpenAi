@@ -46,12 +46,8 @@
 					>
 				</li>
 				<!-- <li class="hover:text-[#fffb00]">
-				<a class:active={$page.url.pathname == '/guestbook'} href="/guestbook">Guestbook</a>
-				</li> -->
-
-				<li class="hover:text-[#fffb00]">
 					<a class:active={$page.url.pathname == '/login'} href="https://madr.io/login">Login</a>
-				</li>
+				</li> -->
 			</div>
 			<li>
 				<Hamburger bind:open={sidebar} />
