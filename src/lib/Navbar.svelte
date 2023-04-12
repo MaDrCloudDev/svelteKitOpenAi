@@ -38,7 +38,7 @@
 					>
 				</li>
 				<li class="hover:text-[#fffb00]">
-					<a class:active={$page.url.pathname == '/'} href="/">Robot?</a>
+					<a class:active={$page.url.pathname == '/'} href="/">AI?</a>
 				</li>
 				<li class="hover:text-[#fffb00]">
 					<a class:active={$page.url.pathname == '/contact'} href="https://madr.io/contact"
