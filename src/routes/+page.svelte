@@ -73,10 +73,10 @@
 	class="flex flex-col max-w-lg w-full mx-auto overflow-hidden"
 	on:submit|preventDefault={handleSubmit}
 >
-	<label class="text-[#fffb00] text-xl mb-1" for="context">Introduce yourself to the bot:</label>
+	<label class="text-[#fffb00] text-xl mb-1" for="context">Introduce yourself to the AI:</label>
 	<input
 		placeholder="e.g. Hi, I'm MaDr, I'm a developer from Arizona..."
-		class="bg-black rounded-md border-[#7f7d76] border text-[#328eef] p-4"
+		class="bg-black rounded-md border-[#7f7d76] border text-[#328eef] p-4 mx-1"
 		name="context"
 		bind:value={context}
 	/>
