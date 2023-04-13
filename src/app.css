@@ -5,7 +5,7 @@
 
 html,
 body {
-	@apply h-full bg-black text-white;
+	@apply h-full bg-black text-white overflow-hidden;
 }
 
 form {
