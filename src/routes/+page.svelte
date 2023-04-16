@@ -78,7 +78,7 @@
 	>
 	<input
 		placeholder="e.g. Hi, I'm MaDr, I'm a developer from Arizona..."
-		class="bg-black placeholder:text-gray-500 rounded-lg border-2 border-gray-600 text-[#328eef] text-sm sm:text-xl px-2 py-2"
+		class="bg-black placeholder:text-gray-500 rounded-lg border-2 border-gray-600 text-[#328eef] text-sm sm:text-xl px-2 py-2 mx-1"
 		name="context"
 		bind:value={context}
 	/>
@@ -99,7 +99,7 @@
 			>
 				<h2 class="text-2xl font-bold text-right text-green-500 mb-1">flirtatiousAI:</h2>
 
-				<p class="text-2xl border rounded-2xl p-4">{answer}</p>
+				<p class="text-2xl border-2 border-gray-500 rounded-2xl p-4">{answer}</p>
 			</div>
 		{/if}
 	{/if}
