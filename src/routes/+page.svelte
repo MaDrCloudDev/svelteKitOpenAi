@@ -78,7 +78,7 @@
 	>
 	<input
 		placeholder="e.g. Hi, I'm MaDr, I'm a developer from Arizona..."
-		class="bg-black rounded-md border-[#7f7d76] border text-[#328eef] p-4 mx-1 text-sm sm:text-lg"
+		class="bg-black placeholder:text-gray-500 rounded-lg border-2 border-gray-600 text-[#328eef] text-sm sm:text-xl px-2 py-2"
 		name="context"
 		bind:value={context}
 	/>
