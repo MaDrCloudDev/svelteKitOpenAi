@@ -69,9 +69,9 @@
 
 <ul
 	style="background-color: hsla(0, 0%, 0%, 0.5)"
-	class="flex justify-between sticky top-0 z-50 backdrop-blur-sm mt-2 max-w-2xl sm:max-w-4xl mx-auto"
+	class="px-3 mt-2 flex justify-between sticky top-0 z-50 backdrop-blur-sm max-w-2xl sm:max-w-4xl mx-auto"
 >
-	<div class="hidden sm:flex w-full justify-between items-center text-xl">
+	<div class="hidden md:flex w-full justify-between items-center text-xl">
 		<li><a on:click={toggle} href="https://madr.io/" aria-label="MaDr Logo"><LogoNav /></a></li>
 		<li><a class:active={$page.url.pathname == '/about'} href="https://madr.io/about">about</a></li>
 		<li><a class:active={$page.url.pathname == '/tech'} href="https://madr.io/tech">tech</a></li>

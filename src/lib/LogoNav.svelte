@@ -1,5 +1,5 @@
 <svg
-	class="mt-2"
+	class=""
 	width="25"
 	height="50"
 	viewBox="0 0 25 50"
