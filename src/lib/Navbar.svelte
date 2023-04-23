@@ -12,7 +12,7 @@
 	}
 </script>
 
-<header class="sticky top-0 z-50 bg-black text-[#7f7d76]">
+<!-- <header class="sticky top-0 z-50 bg-black text-[#7f7d76]">
 	<div class="pb-2 flex-grow max-w-2xl sm:max-w-4xl text-xl sm:text-xl mx-auto">
 		<ul class="flex items-center justify-between">
 			<li class="ml-2">
@@ -35,19 +35,19 @@
 				<li class="hover:text-[#fffb00]">
 					<a class:active={$page.url.pathname == '/weather'} href="https://madr.io/weather/"
 						>Weather?</a
-					>
-				</li>
+					> -->
+				<!-- </li>
 				<li class="hover:text-[#fffb00]">
 					<a class:active={$page.url.pathname == '/'} href="/">AI?</a>
-				</li>
+				</li> -->
 				<!-- <li class="hover:text-[#fffb00]">
 					<a class:active={$page.url.pathname == '/blog'} href="/blog">Blog</a>
 				</li> -->
-				<li class="hover:text-[#fffb00]">
+				<!-- <li class="hover:text-[#fffb00]">
 					<a class:active={$page.url.pathname == '/contact'} href="https://madr.io/contact/"
 						>Contact</a
 					>
-				</li>
+				</li> -->
 				<!-- {#if userId}
 					<li class="hover:text-[#fffb00]">
 						<form method="POST">
@@ -59,10 +59,38 @@
 						<a class:active={$page.url.pathname == '/login'} href="/login">Login</a>
 					</li>
 				{/if} -->
-			</div>
+			<!-- </div>
 			<li>
 				<Hamburger bind:open={sidebar} />
 			</li>
 		</ul>
 	</div>
-</header>
+</header> -->
+
+<ul
+	style="background-color: hsla(0, 0%, 0%, 0.5)"
+	class="flex justify-between sticky top-0 z-50 backdrop-blur-sm mt-2 max-w-2xl sm:max-w-4xl mx-auto"
+>
+	<div class="hidden sm:flex w-full justify-between items-center text-xl">
+		<li><a on:click={toggle} href="https://madr.io/" aria-label="MaDr Logo"><LogoNav /></a></li>
+		<li><a class:active={$page.url.pathname == '/about'} href="https://madr.io/about">about</a></li>
+		<li><a class:active={$page.url.pathname == '/tech'} href="https://madr.io/tech">tech</a></li>
+		<li><a class:active={$page.url.pathname == '/projects'} href="https://madr.io/projects">projects</a></li>
+		<li><a class:active={$page.url.pathname == '/weather'} href="https://madr.io/weather">weather?</a></li>
+		<li>
+			<a class:active={$page.url.pathname == '/'} href="https://flirtatiousai.madr.io/">ai?</a>
+		</li>
+		<li><a class:active={$page.url.pathname == '/contact'} href="https://madr.io/contact">contact</a></li>
+		<!-- {#if userId}
+		<li>
+			<form method="POST">
+				<button formaction="/logout" type="submit">logout</button>
+			</form>
+		</li>
+	{:else}
+		<li><a class:active={$page.url.pathname == '/login'} href="/login">login</a></li>
+	{/if} -->
+	</div>
+	<div />
+	<li class=""><Hamburger bind:open={sidebar} /></li>
+</ul>

@@ -73,7 +73,7 @@
 	class="flex flex-col max-w-lg w-full mx-auto overflow-hidden"
 	on:submit|preventDefault={handleSubmit}
 >
-	<label class="text-[#fffb00] text-xl sm:text-2xl px-1 mb-1" for="context"
+	<label class="text-[#fffb00] text-xl sm:text-2xl px-1 mb-1 ml-1" for="context"
 		>Introduce yourself to the AI:</label
 	>
 	<input
