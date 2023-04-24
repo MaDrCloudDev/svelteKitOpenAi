@@ -10,7 +10,7 @@
 
 <Navbar data bind:sidebar={open} />
 <Sidebar bind:open />
-<div class="max-w-2xl sm:max-w-5xl mx-auto">
+<div class="max-w-2xl sm:max-w-5xl mx-auto px-4">
 	<slot />
 </div>
 <Footer />
