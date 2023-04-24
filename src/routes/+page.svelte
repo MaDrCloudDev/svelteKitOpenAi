@@ -78,15 +78,16 @@
 	>
 	<input
 		placeholder="e.g. Hi, I'm MaDr, I'm a developer from Arizona..."
-		class="bg-black placeholder:text-gray-500 rounded-lg border-2 border-gray-600 text-[#328eef] text-sm sm:text-xl px-2 py-2 mx-1"
+		class="bg-black placeholder:text-gray-400 border-2 border-[#7F7D76] text-[#328eef] text-sm sm:text-xl px-3 py-2 mx-1"
 		name="context"
 		bind:value={context}
 	/>
+	<div class="flex justify-center mt-3 mb-3">
 	<button
 		type="submit"
-		class="btn mb-2 btn-black w-fit mx-auto mt-3 p-4 rounded-full border border-gray-900 text-[#7f7d76] shadow-md shadow-gray-700 hover:scale-110 ease-in duration-200 hover:text-[#fffb00] hover:border-[#328eef] hover:shadow-[#328eef] text-sm md:text-lg"
+		class="btn btn-primary text-[#7F7D76] hover:text-black text-lg"
 		>Introduce Yourself</button
-	>
+	></div>
 	{#if answer}
 		{#if visible}
 			<div
@@ -99,7 +100,7 @@
 			>
 				<h2 class="text-2xl font-bold text-right text-green-500 mb-1">flirtatiousAI:</h2>
 
-				<p class="text-2xl border-2 border-gray-500 rounded-2xl p-4">{answer}</p>
+				<p class="text-2xl border-2 border-[#7F7D76] p-4">{answer}</p>
 			</div>
 		{/if}
 	{/if}
@@ -112,3 +113,22 @@
 		>Read about this project!</a
 	>
 </div>
+
+<style>
+	.btn {
+		background-color: black;
+		font-weight: 500;
+		max-width: max-content;
+		letter-spacing: 2px;
+		padding: 10px 22px;
+		box-shadow: 4px 4px 0 -1px #7f7d76;
+		transition: 0.25s ease;
+		border: 1px solid black;
+	}
+
+	.btn:is(:hover, :focus-visible) {
+		background-color: #328eef;
+		box-shadow: 5px 5px 0 -2px #fffb00;
+		border: 1px solid #328eef;
+	}
+</style>
