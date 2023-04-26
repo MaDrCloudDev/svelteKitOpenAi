@@ -4,7 +4,7 @@
 
 <button
 	aria-label="Open menu"
-	class="text-[#7f7d76] hover:text-[#fffb00] md:hidden cursor-pointer mr-4 border-none focus:outline-none"
+	class="text-[#7f7d76] hover:text-[#fffb00] md:hidden cursor-pointer mr-4 border-none focus:outline-none mt-1"
 	class:open
 	on:click={() => (open = !open)}
 >
