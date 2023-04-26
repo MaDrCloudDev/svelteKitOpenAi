@@ -1,11 +1,11 @@
 <script>
 	import '../app.css'
-	import { page } from '$app/stores'
 	export let data
 	import Navbar from '$lib/Navbar.svelte'
 	export let open = false
 	import Sidebar from '$lib/Sidebar.svelte'
 	import Footer from '$lib/Footer.svelte'
+	import '@fontsource/fredoka';
 </script>
 
 <Navbar data bind:sidebar={open} />
@@ -14,3 +14,11 @@
 	<slot />
 </div>
 <Footer />
+
+<style>
+	*,
+	html,
+	body {
+		font-family: 'Fredoka', sans-serif;
+	}
+</style>

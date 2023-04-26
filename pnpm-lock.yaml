@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@fontsource/fredoka':
+    specifier: ^4.5.9
+    version: 4.5.9
   common-tags:
     specifier: ^1.8.2
     version: 1.8.2
@@ -297,6 +300,10 @@ packages:
     resolution: {integrity: sha512-JXdzbRiWclLVoD8sNUjR443VVlYqiYmDVT6rGUEIEHU5YJW0gaVZwV2xgM7D4arkvASqD0IlLUVjHiFuxaftRw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
+
+  /@fontsource/fredoka@4.5.9:
+    resolution: {integrity: sha512-kyqvSSIaGsDsPamh+fNqw37UE7g27r2Tp2tJy4/ti+bCrF+/PJkGdOWqhF1Q909J1yBAJtr8ga/MZhpxFeWmyQ==}
+    dev: false
 
   /@humanwhocodes/config-array@0.11.8:
     resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}
