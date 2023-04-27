@@ -1,6 +1,5 @@
 <script>
 	import { page } from '$app/stores'
-	import LogoColor from '$lib/LogoColor.svelte'
 	import LogoBW from '$lib/LogoBW.svelte'
 	export let open = false
 
@@ -12,60 +11,42 @@
 
 <aside class="fixed w-full h-full bg-black shadow-lg text-3xl text-center z-50" class:open>
 	<ul class="flex flex-col gap-6 content">
-		<li class="hover:text-[#fffb00] mb-3">
-			<a
-				on:click={toggle}
-				class:active={$page.url.pathname == '/about'}
-				href="https://madr.io/about/">about</a
-			>
-		</li>
-		<li class="hover:text-[#fffb00] mb-3">
-			<a
-				on:click={toggle}
-				class:active={$page.url.pathname == 'https://madr.io/tech/'}
-				href="https://madr.io/tech/">tech</a
-			>
-		</li>
-		<li class="hover:text-[#fffb00] mb-3">
-			<a
-				on:click={toggle}
-				class:active={$page.url.pathname == 'https://madr.io/projects/'}
-				href="https://madr.io/projects/">projects</a
-			>
-		</li>
-		<li class="hover:text-[#fffb00] mb-3">
-			<a
-				on:click={toggle}
-				class:active={$page.url.pathname == 'https://madr.io/weather/'}
-				href="https://madr.io/weather/">weather?</a
-			>
-		</li>
-		<li class="hover:text-[#fffb00]">
-			<a class:active={$page.url.pathname == '/'} href="https://flirtatiousai.madr.io/">ai?</a>
-		</li>
-		<!-- <li class="hover:text-[#fffb00] mb-3">
-			<a
-				on:click={toggle}
-				class:active={$page.url.pathname == 'https://madr.io/login/'}
-				href="https://madr.io/login/">Login</a
-			>
-		</li> -->
-		<li class="hover:text-[#fffb00] mb-3">
-			<a
-				on:click={toggle}
-				class:active={$page.url.pathname == 'https://madr.io/contact/'}
-				href="https://madr.io/contact/">contact</a
-			>
-		</li>
-		<li class="mx-auto">
+		<a on:click={toggle} class:active={$page.url.pathname == '/about'} href="https://madr.io/about/"
+			><li class="hover:text-[#fffb00] mb-3">about</li></a
+		>
+		<a
+			on:click={toggle}
+			class:active={$page.url.pathname == 'https://madr.io/tech/'}
+			href="https://madr.io/tech/"><li class="hover:text-[#fffb00] mb-3">tech</li></a
+		>
+		<a
+			on:click={toggle}
+			class:active={$page.url.pathname == 'https://madr.io/projects/'}
+			href="https://madr.io/projects/"><li class="hover:text-[#fffb00] mb-3">projects</li></a
+		>
+		<a
+			on:click={toggle}
+			class:active={$page.url.pathname == 'https://madr.io/weather/'}
+			href="https://madr.io/weather/"><li class="hover:text-[#fffb00] mb-3">weather?</li></a
+		>
+		<a class:active={$page.url.pathname == '/'} href="https://flirtatiousai.madr.io/"
+			><li class="hover:text-[#fffb00]">ai?</li></a
+		>
+		<a
+			on:click={toggle}
+			class:active={$page.url.pathname == 'https://madr.io/contact/'}
+			href="https://madr.io/contact/"><li class="hover:text-[#fffb00] mb-3">contact</li></a
+		>
+		<div class="mx-auto">
 			<a
 				on:click={toggle}
 				class:active={$page.url.pathname == 'https://madr.io/'}
 				href="https://madr.io/"
+				><li>
+					<LogoBW />
+				</li></a
 			>
-				<LogoBW />
-			</a>
-		</li>
+		</div>
 	</ul>
 </aside>
 
