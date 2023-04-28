@@ -1,10 +1,10 @@
 <script>
-	export let open = false;
+	export let open = false
 </script>
 
 <button
 	aria-label="Open menu"
-	class="text-white hover:text-[#fffb00] md:hidden cursor-pointer mr-1 border-none focus:outline-none mt-1"
+	class="text-white hover:text-[#fffb00] md:hidden cursor-pointer mr-1 border-none focus:outline-none mt-1 mb-3"
 	class:open
 	on:click={() => (open = !open)}
 >
