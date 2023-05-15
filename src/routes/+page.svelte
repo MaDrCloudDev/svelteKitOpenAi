@@ -33,7 +33,7 @@
 		eventSource.addEventListener('error', (e) => {
 			error = true
 			loading = false
-			alert('Something went wrong!')
+			alert('Please enter an introduction.')
 		})
 
 		eventSource.addEventListener('message', (e) => {
@@ -83,11 +83,10 @@
 		bind:value={context}
 	/>
 	<div class="flex justify-center mt-3 mb-3">
-	<button
-		type="submit"
-		class="btn btn-primary text-[#7F7D76] hover:text-black text-lg"
-		>Introduce Yourself</button
-	></div>
+		<button type="submit" class="btn btn-primary text-[#7F7D76] hover:text-black text-lg"
+			>Introduce Yourself</button
+		>
+	</div>
 	{#if answer}
 		{#if visible}
 			<div

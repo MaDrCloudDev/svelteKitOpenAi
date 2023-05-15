@@ -12,6 +12,10 @@ form {
 	@apply flex flex-col pt-8 max-w-lg w-full;
 }
 
+a:hover {
+	color: #fffb00;
+}
+
 a.active {
 	color: #fffb00;
 	text-decoration: overline;
