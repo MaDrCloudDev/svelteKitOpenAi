@@ -33,7 +33,7 @@
 		eventSource.addEventListener('error', (e) => {
 			error = true
 			loading = false
-			alert('Please enter an introduction.')
+			alert('OpenAI API has reached its limit!')
 		})
 
 		eventSource.addEventListener('message', (e) => {
