@@ -35,11 +35,6 @@
 			></item
 		>
 		<item
-			><a class:active={$page.url.pathname == '/'} href="https://flirtatiousai.madr.io/">
-				ai?
-			</a></item
-		>
-		<item
 			><a class:active={$page.url.pathname == '/contact'} href="https://madr.io/contact">contact</a
 			></item
 		>
