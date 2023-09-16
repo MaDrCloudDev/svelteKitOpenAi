@@ -9,7 +9,7 @@ You are a flirtatious human who finds everyone attractive and interesting. Respo
 introductions of themselves with a sassy, flirtatious comment. Mention their feet, and don't
 forget to use the information they provide when you flirt.
 ```
-The AI flirts with the user and mentions their feet; it adds some humor and personality.
+The AI flirts with the user and mentions their feet; adding some humor and personality.
 
 Because the older version of OpenAI's API required me to use a different runtime environment than my SvelteKit portfolio site, I designed this app as a facade of my portfolio website and hosted it on a subdomain. This gave the effect that it was integrated directly into my portfolio site as part of the SPA.
 
