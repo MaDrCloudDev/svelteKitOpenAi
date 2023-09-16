@@ -9,3 +9,5 @@ introductions of themselves with a sassy, flirtatious comment. Mention their fee
 forget to use the information they provide when you flirt.
 ```
 Makes it funny; gives it some personality.
+
+Because the older version of OpenAI's API required me to use a differnt runtime environment than my SvelteKit portfolio site, I designed this app as a facade of my portfolio website, and hosted it on a subdomain. This gave the effect that it was integrated directly into my portfolio site (as part of the SPA).
