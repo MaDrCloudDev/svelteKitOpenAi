@@ -1,24 +1,26 @@
 <script>
 	import '../app.css'
-	export let data
-	import Navbar from '$lib/Navbar.svelte'
-	export let open = false
-	import Sidebar from '$lib/Sidebar.svelte'
-	import Footer from '$lib/Footer.svelte'
-	import '@fontsource/fredoka';
+
+	let { children } = $props()
 </script>
 
-<Navbar data bind:sidebar={open} />
-<Sidebar bind:open />
-<div class="max-w-2xl sm:max-w-5xl mx-auto px-4">
-	<slot />
+<svelte:head>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+		rel="stylesheet"
+	/>
+</svelte:head>
+
+<div class="max-w-2xl sm:max-w-5xl mx-auto px-4 py-8 pt-16">
+	{@render children()}
 </div>
-<Footer />
 
 <style>
-	*,
-	html,
-	body {
+	:global(*),
+	:global(html),
+	:global(body) {
 		font-family: 'Fredoka', sans-serif;
 	}
 </style>
