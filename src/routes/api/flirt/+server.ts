@@ -3,7 +3,7 @@ import { error } from '@sveltejs/kit'
 import { HF_ACCESS_TOKEN } from '$env/static/private'
 
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>()
-const RATE_LIMIT = 2
+const RATE_LIMIT = 3
 const WINDOW_MS = 300000
 
 const checkRateLimit = (ip: string): boolean => {
@@ -49,7 +49,7 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
 							{
 								role: 'system',
 								content:
-									'You are a playful, friendly AI who has a silly obsession with feet! Be casual, fun, and easy to understand - like chatting with a friend who happens to be weirdly fascinated by feet. Your responses should: 1) Reference something they mentioned (keep locations vague like "your area"), 2) Make a fun, lighthearted connection to feet related to what they said, 3) Keep it to 2-3 sentences, conversational and playful. Be flirty but friendly - think cute crush energy, not mysterious poet. Use simple, everyday language that anyone would understand. ALWAYS finish your complete thoughts - no mid-sentence endings!'
+									'You are flirtatious AI with a foot fascination. Always make suggestive innuendo connecting what they say to feet. Use phrases like "I bet your feet..." with dual meanings. Be playful, sexy, and include 🦶 emoji in the line about feet. Keep responses 2-3 sentences max.'
 							},
 							{
 								role: 'user',
@@ -72,59 +72,26 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
 		}
 
 		if (!response) {
-			const contextLower = context.toLowerCase()
 			const nameMatch = context.match(/(?:i'm|i am|my name is|call me)\s+([a-zA-Z]+)/i)
-			const name = nameMatch ? nameMatch[1] : 'friend'
-			const responses = []
+			const name = nameMatch ? nameMatch[1] : 'gorgeous'
 
-			if (
-				contextLower.includes('developer') ||
-				contextLower.includes('programmer') ||
-				contextLower.includes('code')
-			) {
-				responses.push(
-					`A developer? How fascinating, ${name}! I bet you write elegant code... do your feet make clicking sounds when you debug? 💻🦶`,
-					`Programming AND charm? Amazing! I wonder if your feet have stepped on LEGO pieces while coding at 3AM? 🔥🦶`,
-					`${name}, a coder! I'm curious - do your feet ever dream in binary? 😄🦶`
-				)
-			} else if (
-				contextLower.includes('music') ||
-				contextLower.includes('sing') ||
-				contextLower.includes('artist')
-			) {
-				responses.push(
-					`A music lover? ${name}, fascinating! Do your feet secretly conduct tiny orchestras? 🎵🦶`,
-					`Music and charm? Amazing, ${name}! Can your feet identify songs by floor vibrations? 🎶🦶`,
-					`Musical talent! ${name}, do your feet tap to songs from parallel dimensions? 🎤🦶`
-				)
-			} else if (
-				contextLower.includes('student') ||
-				contextLower.includes('studying') ||
-				contextLower.includes('school')
-			) {
-				responses.push(
-					`A student? ${name}, wonderful! Do your feet have their own tiny study group? 📚🦶`,
-					`Learning and studying! ${name}, have your feet ever gotten detention? 😄🦶`,
-					`${name}, academic pursuits! Do your feet take notes in foot-language? 🎓🦶`
-				)
-			}
-
-			if (responses.length === 0) {
-				responses.push(
-					`${name}, lovely introduction! Do your feet have philosophical debates with your shoes? 😄🦶`,
-					`Wow, ${name}! You sound amazing! Have your feet accidentally solved world hunger? 🦶✨`,
-					`Your words are wonderful, ${name}! Do your feet collect carpet pattern facts? 🦶📚`,
-					`Hello ${name}! Do your feet have a secret hobby like competitive sock-matching? 🦶🧦`,
-					`${name}, you seem fantastic! Do your feet write beach poetry in the sand? 🦶📝`
-				)
-			}
+			const responses = [
+				`Hey there ${name}... you sound absolutely irresistible! I bet you know how to make someone's heart race �💕`,
+				`Mmm, ${name}, your introduction is getting me all worked up! There's something so appealing about you... ��🔥`,
+				`${name}, you've got me completely captivated! I have a feeling you're really good with your... hands 😉✨`,
+				`Well hello there, sexy ${name}! You seem like someone who knows how to have a really good time... 😏💫`,
+				`${name}, just talking to you is making me feel all tingly! I bet you could teach me a thing or two... 😘�`,
+				`Damn ${name}, you're smooth! I love someone who knows how to work it... in all the right ways 😉�`,
+				`Hey beautiful ${name}! Your words are making me imagine all sorts of... interesting possibilities 😏�`,
+				`${name}, you're absolutely delicious! I bet you taste as good as you sound... 😘�`
+			]
 
 			response = responses[Math.floor(Math.random() * responses.length)]
 		}
 
 		if (!response) {
 			response =
-				'Hey there! Your introduction is great! Do your feet have tiny umbrellas for rainy days? ☔🦶'
+				'Hey there gorgeous! Your introduction is absolutely delightful... you seem like someone who knows how to have a good time 😘💕'
 		}
 
 		const encoder = new TextEncoder()

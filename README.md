@@ -4,14 +4,14 @@ A charming AI companion built with modern web technologies. This playful chat ap
 
 ## What it does
 
-flirtatiousAI creates engaging, witty conversations using Meta's Llama 3.2 model via Hugging Face. The AI personality is designed to be charming and playfully flirty while maintaining respect and appropriate boundaries.
+flirtatiousAI creates engaging, witty conversations using Meta's Llama 3.2 model via Hugging Face. The AI personality is designed to be naturally flirtatious with subtle innuendo, playful charm, and a quirky fascination with feet, while maintaining tasteful boundaries and respectful interaction.
 
 ## Technical highlights
 
 - **SvelteKit 2.0** with the latest Svelte 5 runes syntax
 - **Hugging Face Integration** using Llama-3.2-1B-Instruct model
 - **Streaming responses** for real-time conversation flow
-- **Rate limiting** (2 requests per 5 minutes per IP)
+- **Rate limiting** (3 requests per 5 minutes per IP)
 - **Modern TypeScript** with strict type checking
 - **Tailwind CSS** for responsive, cyberpunk-inspired design
 - **Vercel deployment** ready with serverless functions
@@ -21,8 +21,8 @@ flirtatiousAI creates engaging, witty conversations using Meta's Llama 3.2 model
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/MaDrCloudDev/svelteKitOpenAi.git
-   cd svelteKitOpenAi
+   git clone https://github.com/MaDrCloudDev/flirtatiousAI.git
+   cd flirtatiousAI
    ```
 
 2. **Install dependencies**
@@ -56,7 +56,7 @@ The application follows a clean, modern architecture:
 
 ## Rate limiting
 
-The application implements IP-based rate limiting (2 requests per 5 minutes) to prevent abuse and manage API costs. This is handled in-memory and resets on server restart.
+The application implements IP-based rate limiting (3 requests per 5 minutes) to prevent abuse and manage API costs. This is handled in-memory and resets on server restart.
 
 ## Contributing
 

@@ -18,7 +18,7 @@
 		if (!context.trim() || loading) return
 
 		const now = Date.now()
-		if (now - lastSubmitTime < 3000) {
+		if (now - lastSubmitTime < 5000) {
 			alert('Please wait a moment before submitting again!')
 			return
 		}
@@ -97,7 +97,7 @@
 		>Introduce yourself to the AI:</label
 	>
 	<input
-		placeholder="e.g. Hi, I'm MaDr, I'm a developer from Arizona..."
+		placeholder="e.g. Hi, I'm MaDr, a developer from Arizona..."
 		class="bg-black placeholder:text-gray-400 border-2 border-[#7F7D76] text-[#328eef] text-sm sm:text-xl px-3 py-2 mx-1"
 		name="context"
 		bind:value={context}
@@ -129,14 +129,6 @@
 		</div>
 	{/if}
 </form>
-
-<div class="flex justify-center mt-2">
-	<a
-		href="https://madr.io/flirtatiousai"
-		class="justify-center text-lg sm:text-2xl hover:text-[#fffb00] text-[#328eef] cursor-pointer"
-		>Read about this project!</a
-	>
-</div>
 
 <style>
 	.btn {

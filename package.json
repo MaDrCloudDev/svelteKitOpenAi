@@ -1,5 +1,5 @@
 {
-	"name": "sveltekit-groq-flirt-bot",
+	"name": "flirtatious-ai",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -14,7 +14,6 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.3.1",
-		"@sveltejs/adapter-vercel": "^5.4.6",
 		"@sveltejs/kit": "^2.43.4",
 		"@sveltejs/vite-plugin-svelte": "^4.0.4",
 		"@types/common-tags": "^1.8.4",
