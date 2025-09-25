@@ -19,22 +19,25 @@ flirtatiousAI creates engaging, witty conversations using Meta's Llama 3.2 model
 ## Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/MaDrCloudDev/svelteKitOpenAi.git
    cd svelteKitOpenAi
    ```
 
 2. **Install dependencies**
+
    ```bash
    pnpm install
    ```
 
 3. **Configure environment**
    Create a `.env` file with your Hugging Face token:
+
    ```
    HF_ACCESS_TOKEN=your_hugging_face_token_here
    ```
-   
+
    Get your token from [Hugging Face Settings](https://huggingface.co/settings/tokens) (requires fine-grained token with `inference.serverless.write` permissions)
 
 4. **Start development server**
@@ -58,4 +61,3 @@ The application implements IP-based rate limiting (2 requests per 5 minutes) to 
 ## Contributing
 
 This is a personal project showcasing modern web development practices. Feel free to fork and experiment with your own modifications.
-
