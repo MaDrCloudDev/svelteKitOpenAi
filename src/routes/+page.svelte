@@ -1,116 +1,140 @@
 <script lang="ts">
-	import { fly } from 'svelte/transition'
-	import type { CreateCompletionResponse } from 'openai'
-	import { SSE } from 'sse.js'
+	import { fly } from 'svelte/transition';
 
-	let visible = false
-
-	let context = ''
-	let loading = false
-	let error = false
-	let answer = ''
-
-	function resetInput() {
-		document.querySelector('input').value = ''
-		document.activeElement.blur()
-		// document.querySelector('input').focus(); //breaks on mobile
-	}
+	let message = $state('');
+	let response = $state('');
+	let loading = $state(false);
+	let visible = $state(false);
+	
+	let lastSubmitTime = 0;
+	const debounceDelay = 1000;
 
 	const handleSubmit = async () => {
-		loading = true
-		error = false
-		answer = ''
+		const now = Date.now();
+		if (now - lastSubmitTime < debounceDelay) {
+			return;
+		}
+		lastSubmitTime = now;
 
-		const eventSource = new SSE('/api/flirt', {
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			payload: JSON.stringify({ context })
-		})
+		if (!message.trim()) return;
 
-		context = ''
+		loading = true;
+		response = '';
+		visible = false;
 
-		eventSource.addEventListener('error', (e) => {
-			error = true
-			loading = false
-			alert('OpenAI API has reached its limit!')
-		})
+		try {
+			const res = await fetch('/api/flirt', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ message }),
+			});
 
-		eventSource.addEventListener('message', (e) => {
-			try {
-				loading = false
-
-				if (e.data === '[DONE]') {
-					return
-				}
-
-				const completionResponse: CreateCompletionResponse = JSON.parse(e.data)
-
-				const [{ text }] = completionResponse.choices
-
-				answer = (answer ?? '') + text
-			} catch (err) {
-				error = true
-				loading = false
-				console.error(err)
-				alert('Something went wrong!')
+			if (!res.ok) {
+				const errorData = await res.json().catch(() => ({ error: { message: res.statusText } }));
+				throw new Error(errorData.error?.message || `Server error: ${res.status}`);
 			}
-		})
 
-		eventSource.stream()
-		resetInput()
-		visible = true
-	}
+			message = '';
+			
+			const reader = res.body?.getReader();
+			if (!reader) throw new Error('No response stream available');
+
+			const decoder = new TextDecoder();
+			let buffer = '';
+
+			while (true) {
+				const { done, value } = await reader.read();
+				if (done) break;
+
+				buffer += decoder.decode(value, { stream: true });
+				const lines = buffer.split('\n');
+				buffer = lines.pop() || '';
+
+				for (const line of lines) {
+					if (line.startsWith('data: ')) {
+						const data = line.slice(6);
+						
+						if (data === '[DONE]') continue;
+						
+						try {
+							const parsed = JSON.parse(data);
+							const content = parsed.choices?.[0]?.delta?.content;
+							if (content) {
+								response += content;
+								if (!visible) visible = true;
+							}
+						} catch (e) {
+							console.warn('Failed to parse SSE data:', data);
+						}
+					}
+				}
+			}
+
+		} catch (error) {
+			console.error('Chat error:', error);
+			response = `Error: ${error instanceof Error ? error.message : 'Something went wrong. Please try again.'}`;
+			visible = true;
+		} finally {
+			loading = false;
+		}
+	};
 </script>
 
 <svelte:head>
 	<title>flirtatiousAI | MaDr</title>
-	<meta name="description" content="A bot that flirts with you by MaDrCloudDev." />
+	<meta name="description" content="A charming AI companion powered by Hugging Face Llama 3.2" />
 </svelte:head>
 
-<h1 class="text-4xl sm:text-5xl font-bold text-[#328eef] text-center">flirtatiousAI</h1>
-<form
-	class="flex flex-col max-w-lg w-full mx-auto overflow-hidden"
-	on:submit|preventDefault={handleSubmit}
->
-	<label class="text-[#fffb00] text-xl sm:text-2xl px-1 mb-1 ml-1" for="context"
-		>Introduce yourself to the AI:</label
-	>
-	<input
-		placeholder="e.g. Hi, I'm MaDr, I'm a developer from Arizona..."
-		class="bg-black placeholder:text-gray-400 border-2 border-[#7F7D76] text-[#328eef] text-sm sm:text-xl px-3 py-2 mx-1"
-		name="context"
-		bind:value={context}
-	/>
-	<div class="flex justify-center mt-3 mb-3">
-		<button type="submit" class="btn btn-primary text-[#7F7D76] hover:text-black text-lg"
-			>Introduce Yourself</button
-		>
-	</div>
-	{#if answer}
-		{#if visible}
-			<div
-				class="pt-4"
-				transition:fly={{ x: 200, duration: 2000 }}
-				on:introstart={() => (status = 'intro started')}
-				on:outrostart={() => (status = 'outro started')}
-				on:introend={() => (status = 'intro ended')}
-				on:outroend={() => (status = 'outro ended')}
-			>
-				<h2 class="text-2xl font-bold text-right text-green-500 mb-1">flirtatiousAI:</h2>
+<h1 class="text-4xl sm:text-5xl font-bold text-[#328eef] text-center mb-8">flirtatiousAI</h1>
 
-				<p class="text-2xl border-2 border-[#7F7D76] p-4">{answer}</p>
+<form class="flex flex-col max-w-lg w-full mx-auto overflow-hidden" on:submit|preventDefault={handleSubmit}>
+	<label class="text-[#fffb00] text-xl sm:text-2xl px-1 mb-1 ml-1" for="message">
+		What's on your mind?
+	</label>
+	
+	<input
+		placeholder="Say something charming..."
+		class="bg-black placeholder:text-gray-400 border-2 border-[#7F7D76] text-[#328eef] text-sm sm:text-xl px-3 py-2 mx-1"
+		name="message"
+		bind:value={message}
+		disabled={loading}
+	/>
+	
+	<div class="flex justify-center mt-3 mb-3">
+		<button 
+			type="submit" 
+			disabled={loading || !message.trim()}
+			class="btn btn-primary text-[#7F7D76] hover:text-black text-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+		>
+			{#if loading}
+				<div class="animate-spin w-4 h-4 border-2 border-current border-t-transparent rounded-full"></div>
+				Thinking...
+			{:else}
+				Send Message
+			{/if}
+		</button>
+	</div>
+
+	{#if response && visible}
+		<div
+			class="pt-4 animate-fade-in"
+			transition:fly={{ x: 200, duration: 1000 }}
+		>
+			<h2 class="text-2xl font-bold text-right text-green-500 mb-2">flirtatiousAI:</h2>
+			<div class="text-lg border-2 border-[#7F7D76] p-4 bg-gray-900 rounded">
+				<p class="whitespace-pre-wrap">{response}</p>
 			</div>
-		{/if}
+		</div>
 	{/if}
 </form>
 
-<div class="flex justify-center mt-2">
+<div class="flex justify-center mt-6">
 	<a
 		href="https://madr.io/flirtatiousai"
-		class="justify-center text-lg sm:text-2xl hover:text-[#fffb00] text-[#328eef] cursor-pointer"
-		>Read about this project!</a
+		class="text-lg sm:text-xl hover:text-[#fffb00] text-[#328eef] cursor-pointer transition-colors"
 	>
+		Learn more about this project
+	</a>
 </div>
 
 <style>
