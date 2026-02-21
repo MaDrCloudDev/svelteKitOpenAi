@@ -2,19 +2,21 @@
 
 html,
 body {
-	@apply h-full bg-black text-white overflow-hidden;
+	height: 100%;
+	background-color: black;
+	color: white;
+	overflow: hidden;
 }
 
-form {
-	@apply flex flex-col pt-8 max-w-lg w-full;
+* {
+	font-family: 'Fredoka', sans-serif;
+}
+
+a {
+	color: white;
+	transition: color 0.2s;
 }
 
 a:hover {
 	color: #fffb00;
-}
-
-a.active {
-	color: #fffb00;
-	text-decoration: overline;
-	text-decoration-color: #328eef;
 }

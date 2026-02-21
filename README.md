@@ -1,63 +1,88 @@
-# flirtatiousAI 2.0
+# flirtatiousAI 1.0
 
-A charming AI companion built with modern web technologies. This playful chat application demonstrates real-time streaming responses, rate limiting, and contemporary UI design patterns.
+A playful AI companion built with modern web technologies. Features real-time streaming responses, intelligent rate limiting, and a polished cyberpunk-inspired UI.
 
-## What it does
+## Features
 
-flirtatiousAI creates engaging, witty conversations using Meta's Llama 3.2 model via Hugging Face. The AI personality is designed to be naturally flirtatious with subtle innuendo, playful charm, and a quirky fascination with feet, while maintaining tasteful boundaries and respectful interaction.
-
-## Technical highlights
-
-- **SvelteKit 2.0** with the latest Svelte 5 runes syntax
-- **Hugging Face Integration** using Llama-3.2-1B-Instruct model
+- **SvelteKit 2** with Svelte 5 runes for reactive state management
 - **Streaming responses** for real-time conversation flow
-- **Rate limiting** (3 requests per 5 minutes per IP)
-- **Modern TypeScript** with strict type checking
-- **Tailwind CSS** for responsive, cyberpunk-inspired design
-- **Vercel deployment** ready with serverless functions
+- **Smart rate limiting** (3 requests per 5 minutes per IP)
+- **Toast notifications** replacing intrusive alerts
+- **Hugging Face Inference** with Llama 3.2 fallback
+- **TypeScript** with strict type checking
+- **Tailwind CSS 4** for responsive design
+- **Vercel-ready** deployment
 
-## Setup
+## Tech Stack
 
-1. **Clone the repository**
+- Svelte 5 with runes (`$state`, `$derived`)
+- SvelteKit 2
+- TypeScript
+- Tailwind CSS 4
+- Vercel adapter
 
-   ```bash
-   git clone https://github.com/MaDrCloudDev/flirtatiousAI.git
-   cd flirtatiousAI
-   ```
+## Quick Start
 
-2. **Install dependencies**
+```bash
+# Clone
+git clone https://github.com/MaDrCloudDev/flirtatiousAI.git
+cd flirtatiousAI
 
-   ```bash
-   pnpm install
-   ```
+# Install
+pnpm install
 
-3. **Configure environment**
-   Create a `.env` file with your Hugging Face token:
+# Configure
+echo "HF_ACCESS_TOKEN=your_token_here" > .env
 
-   ```
-   HF_ACCESS_TOKEN=your_hugging_face_token_here
-   ```
+# Run
+pnpm dev
+```
 
-   Get your token from [Hugging Face Settings](https://huggingface.co/settings/tokens) (requires fine-grained token with `inference.serverless.write` permissions)
+Get your token from [Hugging Face Settings](https://huggingface.co/settings/tokens) (requires `inference.serverless.write` permissions).
 
-4. **Start development server**
-   ```bash
-   pnpm dev
-   ```
+## Project Structure
 
-## Architecture
+```
+src/
+├── lib/
+│   ├── components/
+│   │   └── Toast.svelte      # Toast notification system
+│   ├── notifications.svelte.ts # State management for toasts
+│   └── types.ts              # Shared TypeScript types
+├── routes/
+│   ├── api/flirt/
+│   │   └── +server.ts        # Streaming API endpoint
+│   ├── +layout.svelte        # Root layout
+│   └── +page.svelte          # Main chat interface
+├── app.css                   # Global styles
+└── app.html                  # HTML template
+```
 
-The application follows a clean, modern architecture:
+## Scripts
 
-- **Frontend**: Svelte 5 with runes for reactive state management
-- **API**: SvelteKit serverless functions with built-in rate limiting
-- **Styling**: Tailwind CSS with custom cyberpunk theme
-- **Deployment**: Vercel with automatic builds from GitHub
+| Command        | Description              |
+| -------------- | ------------------------ |
+| `pnpm dev`     | Start development server |
+| `pnpm build`   | Build for production     |
+| `pnpm preview` | Preview production build |
+| `pnpm check`   | Type check               |
+| `pnpm format`  | Format with Prettier     |
+| `pnpm lint`    | Check formatting         |
 
-## Rate limiting
+## API
 
-The application implements IP-based rate limiting (3 requests per 5 minutes) to prevent abuse and manage API costs. This is handled in-memory and resets on server restart.
+### POST /api/flirt
 
-## Contributing
+Request:
 
-This is a personal project showcasing modern web development practices. Feel free to fork and experiment with your own modifications.
+```json
+{ "context": "Hi, I'm Alex..." }
+```
+
+Response: Server-Sent Events stream with JSON chunks
+
+Rate limited to 3 requests per 5 minutes per IP.
+
+## License
+
+MIT

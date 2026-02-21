@@ -10,6 +10,8 @@
 </script>
 
 <svelte:head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link
@@ -18,14 +20,21 @@
 	/>
 </svelte:head>
 
-<div class="max-w-2xl sm:max-w-5xl mx-auto px-4 py-8 pt-16">
+<div class="layout">
 	{@render children()}
 </div>
 
 <style>
-	:global(*),
-	:global(html),
-	:global(body) {
-		font-family: 'Fredoka', sans-serif;
+	.layout {
+		max-width: 42rem;
+		margin: 0 auto;
+		padding: 4rem 1rem 2rem;
+		min-height: 100vh;
+	}
+
+	@media (min-width: 640px) {
+		.layout {
+			max-width: 64rem;
+		}
 	}
 </style>
